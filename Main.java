@@ -11,11 +11,29 @@ public class Main {
 
         String text = sc.nextLine();
 
-        System.out.println("Digite o padrão a ser buscado");
-        String pattern = sc.nextLine();
-        System.out.println("Resultados: ");
+        RabinKarp rbkp = new RabinKarp(text);
 
-        RabinKarp rk = new RabinKarp(text, pattern);
+        String pattern = "";
+
+        while(!pattern.equals("-11")) {
+
+        	System.out.println("Digite o padrão a ser buscado");
+        	pattern = sc.nextLine();
+
+        	if(pattern.equals("-11"))
+        		break;
+
+        	int index = rbkp.lookFor(pattern);
+
+        	if(index < 0)
+        		System.out.println("Não encontrado");
+        	else
+        		System.out.println("Index na posicao: " + index);
+
+        	System.out.println("Difgite -11 para fechar");
+        }
+
+        System.out.println("Fechado.");
 	}
 
 }
