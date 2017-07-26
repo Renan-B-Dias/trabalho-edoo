@@ -5,10 +5,9 @@ public class RabinKarp {
 
   // Numero primo 'grande'
   private long primeNumber;
-
   // radix
   private int radix;
-
+  // Texto inteiro
   private String txt;
 
   // Construtor

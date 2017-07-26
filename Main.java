@@ -1,10 +1,43 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
 
   public static void main(String args[]) {
-    Scanner sc = new Scanner(System.in);
+
+    if(args.length >= 2) {
+      String filePath = args[0];
+      String pattern = args[1];
+
+      File file = new File(filePath);
+
+      try {
+
+        if(!file.exists())
+          throw new FileNotFoundException("Arquivo nao encontrado");
+
+        Scanner streamFile = new Scanner(file);
+
+        String wholeText = "";
+
+        while(streamFile.hasNext()) {
+          wholeText += streamFile.nextLine();
+        }
+
+        System.out.println(wholeText);
+
+      } catch(FileNotFoundException e) {
+        System.out.println(e.getMessage());
+        System.exit(-1);
+      }
+      catch(Exception e) {
+        System.out.println("Unexpected exception");
+        System.exit(-1);
+      }
+    } 
+    else {
+      Scanner sc = new Scanner(System.in);
 
       System.out.println("Rabin Karp Algorithm Test");
       System.out.println("Digite o texto");
@@ -34,5 +67,6 @@ public class Main {
       }
 
       System.out.println("Fechado.");
+    }
   }
 }
