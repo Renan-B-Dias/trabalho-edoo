@@ -15,7 +15,7 @@ public class RabinKarp {
   public RabinKarp(String txt) {
     this.txt = txt;
     this.primeNumber = longRandomPrime();
-    this.radix = 0;
+    this.radix = 52;
   }
 
   public int lookFor(String pattern) {
