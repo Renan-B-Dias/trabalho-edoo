@@ -25,8 +25,6 @@ public class Main {
           wholeText += streamFile.nextLine();
         }
 
-        //System.out.println(wholeText);
-
         RabinKarp rbkp = new RabinKarp(wholeText);
 
         int pos = rbkp.lookFor(pattern);

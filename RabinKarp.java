@@ -14,7 +14,7 @@ public class RabinKarp {
   public RabinKarp(String txt) {
     this.txt = txt;
     this.primeNumber = longRandomPrime();
-    this.radix = 52;
+    this.radix = 256; // Numero de caracteres do alfabeto (ASCII)
   }
 
   public int lookFor(String pattern) {
