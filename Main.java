@@ -25,7 +25,18 @@ public class Main {
           wholeText += streamFile.nextLine();
         }
 
-        System.out.println(wholeText);
+        //System.out.println(wholeText);
+
+        RabinKarp rbkp = new RabinKarp(wholeText);
+
+        int pos = rbkp.lookFor(pattern);
+
+        if(pos >= 0) {
+          System.out.println("Encontrado na posicao: " + pos);
+        }
+        else {
+          System.out.println("Nao encontrado");
+        }
 
       } catch(FileNotFoundException e) {
         System.out.println(e.getMessage());
